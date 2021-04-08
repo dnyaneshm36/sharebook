@@ -30,7 +30,7 @@ DEBUG = True
 # os.getenv('DEBUG', False)
 # print(DEBUG)
 # APPEND_SLASH = False
-ALLOWED_HOSTS = ['localhost','127.0.0.1','*']
+ALLOWED_HOSTS = ['neeraj-atri-share.herokuapp.com']
 
 # Application definition
 DEFAULT_APPS = [
@@ -116,6 +116,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+DEFAULT_FILE_STORAGE = 'backend.custom_azure.AzureMediaStorage'
+STATICFILES_STORAGE = 'backend.custom_azure.AzureStaticStorage'
+
+
+STATIC_LOCATION = "static"
+MEDIA_LOCATION = "media"
+
+AZURE_ACCOUNT_NAME = "encriptedfiles"
+AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
+STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
+MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
