@@ -9,10 +9,12 @@
 	<meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Simple House Template</title>
+    <title>Neeraj Atri. </title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400' rel="stylesheet" />    
 	<link href="{% static 'css/templatemo-style.css' %} " rel="stylesheet" />
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+
 </head>
 <!--
 
@@ -71,9 +73,7 @@ https://templatemo.com/tm-539-simple-house
                         <figcaption>
                           <h4 class="tm-gallery-title">{{book.name}}</h4>
                           <a href= {{ book.book.url }} download>
-                            <button>
-                              download
-                            </button>
+                            <button class="btn"><i class="fa fa-download"></i> Download</button>
                           </a>
                           <p class="tm-gallery-description">{{book.description}}</p>
                           
