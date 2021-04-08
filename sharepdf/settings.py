@@ -30,7 +30,7 @@ DEBUG = True
 # os.getenv('DEBUG', False)
 # print(DEBUG)
 # APPEND_SLASH = False
-ALLOWED_HOSTS = ['neeraj-atri-share.herokuapp.com']
+ALLOWED_HOSTS = ['neeraj-atri-share.herokuapp.com','127.0.0.1']
 
 # Application definition
 DEFAULT_APPS = [
@@ -90,12 +90,10 @@ WSGI_APPLICATION = 'sharepdf.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# Database
+# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+
+DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL') )}
 
 
 # Password validation
